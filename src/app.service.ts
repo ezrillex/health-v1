@@ -17,7 +17,10 @@ export class AppService {
     try{
       const {data} = await firstValueFrom(
           this.httpService.get(
-              this.configService.get<string>('TENSORFLOW_SERVING_URL')
+              this.configService.get<string>('TENSORFLOW_SERVING_URL'),
+              {
+                timeout: 5000,
+              }
           )
       )
       return data;
