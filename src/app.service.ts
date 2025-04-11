@@ -9,9 +9,6 @@ export class AppService {
   constructor(private readonly httpService: HttpService,
               private readonly configService: ConfigService) {
   }
-  getHello(): string {
-    return 'Hello World!';
-  }
 
   async getTensorflowHealth(){
     try{
